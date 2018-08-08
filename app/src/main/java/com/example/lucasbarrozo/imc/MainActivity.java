@@ -1,5 +1,6 @@
 package com.example.lucasbarrozo.imc;
 
+import android.graphics.Color;
 import android.os.PersistableBundle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -64,35 +65,44 @@ public class MainActivity extends AppCompatActivity {
 
 
                 txtclassifica.setText("Magreza Grave");
+                txtclassifica.setTextColor(Color.parseColor("#d50000"));
             }
             else if(resultado <17){
 
                 txtclassifica.setText("Magreza Moderada");
+                txtclassifica.setTextColor(Color.parseColor("#ffca28"));
             }
             else if(resultado < 18.5){
 
                 txtclassifica.setText("Magreza Leve");
+                txtclassifica.setTextColor(Color.parseColor("#ffca28"));
             }
             else if(resultado <25){
 
                 txtclassifica.setText("Saudável");
+                txtclassifica.setTextColor(Color.parseColor("#00C853"));
             }
             else if(resultado <30){
 
                 txtclassifica.setText("Sobrepeso");
+                txtclassifica.setTextColor(Color.parseColor("#FFEB3B"));
             }
 
             else if(resultado <35){
 
                 txtclassifica.setText("Obesidade Grau I");
+                txtclassifica.setTextColor(Color.parseColor("#FFEB3B"));
             }
             else if(resultado <40){
 
                 txtclassifica.setText("Obesidade Grau II (severa)");
+                txtclassifica.setTextColor(Color.parseColor("#FFEB3B"));
             }
             else{
 
                 txtclassifica.setText("Obesidade Grau III (mórbida)");
+                txtclassifica.setTextColor(Color.parseColor("#d50000"));
+
             }
 
         }
