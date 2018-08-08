@@ -1,5 +1,6 @@
 package com.example.lucasbarrozo.imc;
 
+import android.os.PersistableBundle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -10,12 +11,16 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-
+    private  TextView txtresultado;
+    private  TextView txtclassifica;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        txtresultado =(TextView) findViewById(R.id.tvResultado);
+        txtclassifica = (TextView) findViewById(R.id.tvClassifica);
 
         Button btncalcular = (Button)findViewById(R.id.btCalcular);
 
@@ -27,8 +32,8 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onClick(View view) {
 
-            TextView txtResultado = (TextView) findViewById(R.id.tvResultado);
-            TextView txtClassifica = (TextView) findViewById(R.id.tvClassifica);
+//            TextView txtResultado = (TextView) findViewById(R.id.tvResultado);
+//            TextView txtClassifica = (TextView) findViewById(R.id.tvClassifica);
 
             EditText editPeso = (EditText) findViewById(R.id.editPeso);
             EditText editAltura = (EditText) findViewById(R.id.editAltura);
@@ -53,44 +58,45 @@ public class MainActivity extends AppCompatActivity {
 
             float resultado = (peso/((altura*altura)/10000));
 
-            txtResultado.setText(resultado+"");
+            txtresultado.setText(resultado+"");
 
             if(resultado < 16){
 
 
-                txtClassifica.setText("Magreza Grave");
+                txtclassifica.setText("Magreza Grave");
             }
             else if(resultado <17){
 
-                txtClassifica.setText("Magreza Moderada");
+                txtclassifica.setText("Magreza Moderada");
             }
             else if(resultado < 18.5){
 
-                txtClassifica.setText("Magreza Leve");
+                txtclassifica.setText("Magreza Leve");
             }
             else if(resultado <25){
 
-                txtClassifica.setText("Saudável");
+                txtclassifica.setText("Saudável");
             }
             else if(resultado <30){
 
-                txtClassifica.setText("Sobrepeso");
+                txtclassifica.setText("Sobrepeso");
             }
 
             else if(resultado <35){
 
-                txtClassifica.setText("Obesidade Grau I");
+                txtclassifica.setText("Obesidade Grau I");
             }
             else if(resultado <40){
 
-                txtClassifica.setText("Obesidade Grau II (severa)");
+                txtclassifica.setText("Obesidade Grau II (severa)");
             }
             else{
 
-                txtClassifica.setText("Obesidade Grau III (mórbida)");
+                txtclassifica.setText("Obesidade Grau III (mórbida)");
             }
 
         }
     };
+
 
 }
