@@ -53,11 +53,11 @@ public class MainActivity extends AppCompatActivity {
             }
 
             int peso = Integer.parseInt(editPeso.getText().toString());
-            float altura = Float.parseFloat(editAltura.getText().toString());
+            float altura = Float.parseFloat(editAltura.getText().toString())/100;
 
 
 
-            float resultado = (peso/((altura*altura)/10000));
+            float resultado = (peso/((altura*altura)));
 
             txtresultado.setText(resultado+"");
 
